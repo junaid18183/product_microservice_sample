@@ -1,5 +1,6 @@
 const products = [
   {
+    id: 0,
     name: "alphonso mango",
     desc: "great Quality of Mango",
     type: "fruits",
@@ -10,6 +11,7 @@ const products = [
     suplier: "Golden seed firming",
   },
   {
+    id: 1,
     name: "Apples",
     desc: "great Quality of Apple",
     type: "fruits",
@@ -20,6 +22,7 @@ const products = [
     suplier: "Golden seed firming",
   },
   {
+    id: 2,
     name: "Kesar Mango",
     desc: "great Quality of Mango",
     type: "fruits",
@@ -30,6 +33,7 @@ const products = [
     suplier: "Golden seed firming",
   },
   {
+    id: 3,
     name: "Langra Mango",
     desc: "great Quality of Mango",
     type: "fruits",
@@ -40,6 +44,7 @@ const products = [
     suplier: "Golden seed firming",
   },
   {
+    id: 4,
     name: "Broccoli",
     desc: "great Quality of Fresh Vegetable",
     type: "vegetables",
@@ -50,6 +55,7 @@ const products = [
     suplier: "Golden seed firming",
   },
   {
+    id: 5,
     name: "Cauliflower",
     desc: "great Quality of Fresh Vegetable",
     type: "vegetables",
@@ -60,6 +66,7 @@ const products = [
     suplier: "Golden seed firming",
   },
   {
+    id: 6,
     name: "Olive Oil",
     desc: "great Quality of Oil",
     type: "oils",
