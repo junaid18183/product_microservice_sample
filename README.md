@@ -36,3 +36,26 @@ Get all of the products
 ```
 curl -s localhost:8800/api/products | jq "."
 ```
+
+Get the single Shipment
+
+```
+curl -s localhost:8800/api/shipments/1 | jq "."
+{
+  "id": 1,
+  "manager": "Juned",
+  "warehouse": "Pune",
+  "shipment": "250320220500",
+  "product": "7",
+  "status": null,
+  "approver": null,
+  "quantity": "8",
+  "created_on": "Fri, 25 Mar 2022 05:00:00 GMT"
+}
+
+```
+
+Get all of the  single Shipments
+```
+curl -s localhost:8800/api/shipments | jq "."
+```
