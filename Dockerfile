@@ -1,21 +1,21 @@
-# FROM node:17.0.1-slim as builder
+FROM node:17.0.1-slim as builder
 
-# WORKDIR /build
-# COPY --chown=node:node package.json .
-# COPY --chown=node:node package-lock.json .
+WORKDIR /build
 
-# RUN chown -Rh $user:$user /build
-# USER $user
+COPY --chown=node:node package.json .
+COPY --chown=node:node package-lock.json .
 
-# RUN npm ci
-# COPY --chown=node:node . .
-# RUN npm run build
+RUN chown -Rh $user:$user /build
+USER $user
 
-FROM alpine
-RUN apk add --update nodejs nodejs-npm
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci
+RUN npm install
 COPY . .
-EXPOSE 8800
+RUN npm run -s build
+
+FROM node:17.0.1-slim
+USER node
+RUN npm install pm2 react-scripts
+COPY --from=builder /build/ .
+
+EXPOSE  8800
 CMD ["npm", "start"]
