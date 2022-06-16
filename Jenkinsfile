@@ -19,10 +19,6 @@ podTemplate(label: 'demo-customer-pod', cloud: 'kubernetes', serviceAccount: 'je
             container('docker') {
                 sh """
                   docker build -t ${image} .
-                  # cat /etc/.secret/password | docker login --password-stdin --username $DOCKER_USERNAME
-                  # docker push ${image}
-                  # docker tag ${image} ${repository}:${tag}
-                  # docker push ${repository}:${tag}
                 """
                 milestone(1)
             }
