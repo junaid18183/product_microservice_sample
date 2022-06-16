@@ -19,7 +19,6 @@ podTemplate(label: 'dind', cloud: 'kubernetes', serviceAccount: 'jenkins',
         stage('Build Docker Image') {
             container('buildkit') {
                 sh """
-                  docker build -t ${image} .
                   buildctl build --frontend dockerfile.v0 --local context=. --local dockerfile=. --output type=image,name=${image},push=false
                 """
                 milestone(1)
