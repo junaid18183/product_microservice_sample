@@ -5,11 +5,16 @@ node {
         checkout scm
     }
 
-    stage('Build image') {
+    stage('DemoStage') {
         sh """
-            docker build -t spring-petclinic-demo:$BUILD_NUMBER .
+            ls -l 
         """
 }
+    stage('DemoStage2') {
+        app.inside {
+            sh 'echo "Hello World"'
+        }
+    }
 
     stage('Build image') {
         /* This needs Docker Pipeline plugin */
